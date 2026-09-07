@@ -1,7 +1,7 @@
 # Reddit Personal Assistant
 
-Personal automation bot for my own Reddit account (u/Ok_Dot636), built on the
-official **Reddit Data API** (OAuth, script-type app, free tier).
+Personal automation bot for my own Reddit account (u/iwanro-assistant), built on
+the official **Reddit Data API** (OAuth, script-type app, free tier).
 
 ## What it does
 
@@ -16,7 +16,7 @@ official **Reddit Data API** (OAuth, script-type app, free tier).
 
 - No mass posting, no mass DMs, no unsolicited contact with other users.
 - No user data scraping, no data retention beyond my own notifications.
-- Operates **only on my own account** (`u/Ok_Dot636`), within standard free-tier
+- Operates **only on my own account** (`u/iwanro-assistant`), within standard free-tier
   rate limits (well under 60 requests/minute).
 
 ## Tech
@@ -36,6 +36,16 @@ python monitor.py
 Credentials are my own script-type app credentials, obtained through Reddit's
 Data API registration process. The refresh token is stored locally and never
 shared.
+
+## Rate limiting & compliance
+
+- Single poll loop, 5-minute interval, 1.1s spacing between subreddit calls.
+- User-Agent follows the documented convention: `script:personal.assistant:v0.1 (by /u/iwanro-assistant)`.
+- Password grant is used only because this is a **script-type app operating a single
+  dedicated account** (u/iwanro-assistant) — the account the credentials belong to.
+  No other user's credentials are handled.
+- Complies with Reddit's Responsible Builder Policy: no scraping outside the API,
+  no vote manipulation, no automated DMs to other users, no content redistribution.
 
 ## Status
 

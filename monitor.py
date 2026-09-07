@@ -17,7 +17,7 @@ import requests
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("reddit-assistant")
 
-REDDIT_USERNAME = os.environ.get("REDDIT_USERNAME", "Ok_Dot636")
+REDDIT_USERNAME = os.environ.get("REDDIT_USERNAME", "iwanro-assistant")
 USER_AGENT = f"script:personal.assistant:v0.1 (by /u/{REDDIT_USERNAME})"
 
 # Subreddits I follow and want to monitor for new posts
